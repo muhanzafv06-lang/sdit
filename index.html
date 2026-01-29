@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website Resmi SDIT AL AMBARY - Sekolah modern berkualitas dengan fasilitas lengkap.">
+    <meta name="keywords" content="sekolah, pendidikan, SDIT, akademik, berita sekolah, pendaftaran siswa baru">
+    <meta name="author" content="SDIT AL AMBARY">
+    <title>SDIT AL AMBARY - Beranda</title>
+
+    <!-- Google Fonts: Poppins (Heading) & Open Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- VARIABEL CSS & RESET --- */
+        :root {
+            --primary-color: #003366; /* Biru Tua Profesional */
+            --secondary-color: #F4A261; /* Aksen Kuning Emas */
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #002244;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: #e08e4f;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* --- HEADER & NAVIGASI --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: transparent;
+            transition: var(--transition);
+            padding: 20px 0;
+        }
+
+        header.scrolled {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            font-size: 2rem;
+        }
+
+        header.scrolled .logo {
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        header.scrolled .nav-link {
+            color: var(--text-dark);
+        }
+
+        /* Hamburger Menu (Mobile) */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: var(--white);
+            font-size: 1.8rem;
+        }
+
+        header.scrolled .hamburger {
+            color: var(--primary-color);
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: var(--transition);
+            background-color: currentColor;
+        }
+
+        /* --- HERO SECTION --- */
+        #beranda {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://picsum.photos/seed/schoolbuilding/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px; /* Offset header */
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+
+        .hero-buttons {
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .hero-buttons .btn {
+            margin: 0 10px;
+        }
+
+        /* --- PROFIL SEKOLAH --- */
+        #profil {
+            background-color: var(--white);
+        }
+
+        .profil-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .profil-card {
+            background: var(--bg-light);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .profil-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+            border-bottom: 4px solid var(--secondary-color);
+        }
+
+        .profil-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .profil-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- BERITA TERBARU --- */
+        #berita {
+            background-color: var(--bg-light);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .news-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
+        }
+
+        .news-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .news-card:hover .news-image img {
+            transform: scale(1.1);
+        }
+
+        .news-date {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .news-content {
+            padding: 25px;
+        }
+
+        .news-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .news-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            gap: 10px;
+            color: var(--secondary-color);
+        }
+
+        /* --- GALERI --- */
+        #galeri {
+            background-color: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 51, 102, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-overlay i {
+            color: var(--white);
+            font-size: 2rem;
+            transform: scale(0);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay i {
+            transform: scale(1);
+        }
+
+        /* --- KONTAK & LOKASI --- */
+        #kontak {
+            background-color: var(--bg-light);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .info-item h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .info-item p {
+            color: var(--text-light);
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus, 
+        .contact-form textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .map-container {
+            margin-top: 40px;
+            height: 350px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 40px;
+        }
+
+        .footer-about p {
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* --- ANIMATIONS & SCROLL EFFECTS --- */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Keyframes */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- MEDIA QUERIES (RESPONSIVE) --- */
+        @media (max-width: 992px) {
+            .hero-title { font-size: 2.8rem; }
+            .contact-wrapper { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; z-index: 1001; }
+            
+            .hamburger.active .bar:nth-child(2) { opacity: 0; }
+            .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: var(--white);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: 0.4s ease;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-link {
+                color: var(--text-dark);
+                font-size: 1.2rem;
+            }
+
+            .hero-title { font-size: 2.2rem; }
+            
+            .hero-buttons .btn {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigasi -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                SDIT AL AMBARY</a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#beranda" class="nav-link">Beranda</a></li>
+                    <li><a href="#profil" class="nav-link">Profil</a></li>
+                    <li><a href="#berita" class="nav-link">Berita</a></li>
+                    <li><a href="#galeri" class="nav-link">Galeri</a></li>
+                    <li><a href="#kontak" class="nav-link">Kontak</a></li>
+                </ul>
+            </nav>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="beranda">
+            <div class="hero-content">
+                <h1 class="hero-title">Selamat Datang di<div class="editable-hover">SDIT AL AMBARY</div></h1>
+                <p class="hero-subtitle">Membentuk Generasi Cerdas, Berkarakter, dan Berprestasi Menuju Masa Depan Gemilang.</p>
+                <div class="hero-buttons">
+                    <a href="#kontak" class="btn btn-primary">Daftar Sekarang</a>
+                    <a href="#kontak" class="btn btn-outline">Hubungi Kami</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profil Section -->
+        <section id="profil" class="section-padding">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>Profil Sekolah</h2>
+                    <p>Mengenal lebih dekat visi, misi, dan perjalanan sejarah kami dalam mencerdaskan kehidupan bangsa.</p>
+                </div>
+
+                <div class="profil-grid">
+                    <!-- Visi -->
+                    <div class="profil-card animate-on-scroll">
+                        <i class="fas fa-eye profil-icon"></i>
+                        <h3>Visi Kami</h3>
+                        <p>Mewujudkan insan unggul dalam
+ketrampilan global yang berpilar kecerdasan spiritual.</p>
+                    </div>
+                    <!-- Misi -->
+                    <div class="profil-card animate-on-scroll">
+                        <i class="fas fa-bullseye profil-icon"></i>
+                        <h3>Misi Kami</h3>
+                        <p>Terselenggaranya pendidikan
+dasar yang unggul dalam bahasa Inggris, komputer, kompetensi MIPA, literasi
+al-Quran dan pembiasaan akhlakul karimah. </p>
+                    </div>
+                    <!-- Sejarah -->
+                    <div class="profil-card animate-on-scroll">
+                        <i class="fas fa-landmark profil-icon"></i>
+                        <h3>Sejarah</h3>
+                        <p>Berdiri sejak tahun 2004, SDIT AL AMBARY telah meluluskan ratusan alumni yang sukses di berbagai bidang profesi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Berita & Pengumuman -->
+        <section id="berita" class="section-padding">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>Berita Terbaru</h2>
+                    <p>Informasi terkini mengenai kegiatan akademik, pengumuman, dan prestasi siswa.</p>
+                </div>
+
+                <div class="news-grid">
+                    <!-- Berita 1 -->
+                    <article class="news-card animate-on-scroll">
+                        <div class="news-image">
+                            <img src="https://picsum.photos/seed/library/400/300" alt="Perpustakaan Baru">
+                            <span class="news-date">10 Okt 2023</span>
+                        </div>
+                        <div class="news-content">
+                            <h3>Peresmian Perpustakaan Digital Baru</h3>
+                            <p>SDIT AL AMBARY kini dilengkapi fasilitas perpustakaan modern dengan ribuan koleksi e-book.</p>
+                            <a href="#" target="_blank" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Berita 2 -->
+                    <article class="news-card animate-on-scroll">
+                        <div class="news-image">
+                            <img src="https://picsum.photos/seed/sport/400/300" alt="Juara Olimpiade">
+                            <span class="news-date">05 Okt 2023</span>
+                        </div>
+                        <div class="news-content">
+                            <h3>Tim Basket Raih Juara 1 Tingkat Provinsi</h3>
+                            <p>Prestasi membanggakan kembali ditorehkan oleh tim basket putra dalam kejuaraan tahunan.</p>
+                            <a href="#" target="_blank" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Berita 3 -->
+                    <article class="news-card animate-on-scroll">
+                        <div class="news-image">
+                            <img src="https://picsum.photos/seed/class/400/300" alt="PPDB Dibuka">
+                            <span class="news-date">01 Okt 2023</span>
+                        </div>
+                        <div class="news-content">
+                            <h3>Penerimaan Peserta Didik Baru (PPDB)</h3>
+                            <p>Pendaftaran siswa baru tahun ajaran 2024/2025 telah resmi dibuka mulai hari ini.</p>
+                            <a href="#" target="_blank" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeri Kegiatan -->
+        <section id="galeri" class="section-padding">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>Galeri Sekolah</h2>
+                    <p>Dokumentasi aktivitas dan kreativitas siswa di lingkungan sekolah.</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://picsum.photos/seed/student1/400/400" alt="Kegiatan 1">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://picsum.photos/seed/lab/400/400" alt="Kegiatan 2">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://picsum.photos/seed/music/400/400" alt="Kegiatan 3">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://picsum.photos/seed/scout/400/400" alt="Kegiatan 4">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://picsum.photos/seed/art/400/400" alt="Kegiatan 5">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://picsum.photos/seed/grad/400/400" alt="Kegiatan 6">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontak & Lokasi -->
+        <section id="kontak" class="section-padding">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>Hubungi Kami</h2>
+                    <p>Punya pertanyaan? Jangan ragu untuk menghubungi kami atau berkunjung langsung ke sekolah.</p>
+                </div>
+
+                <div class="contact-wrapper animate-on-scroll">
+                    <!-- Info Kontak -->
+                    <div class="contact-info">
+                        <h3>Informasi Kontak</h3>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Alamat</h4>
+                                <p>Jl. H. Ambary RT 01 RW 01, Kec. Bumiayu, Kab. Brebes, Prov. Jawa Tengah</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Whatsapp</h4>
+                                <p>(+62) 85135075272</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>sdit.alambary@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Jam Operasional</h4>
+                                <p>Senin - Kamis: 06.45 - 15.00 WIB<div>Sabtu - Ahad : 06.45 -&nbsp; 12.00 WIB</div></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Kontak -->
+                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Pesan Anda telah terkirim! (Demo Only)');">
+                        <input type="text" placeholder="Nama Lengkap" required="">
+                        <input type="email" placeholder="Alamat Email" required="">
+                        <input type="text" placeholder="Subjek Pesan">
+                        <textarea rows="5" placeholder="Tulis pesan Anda di sini..." required=""></textarea>
+                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                    </form>
+                </div>
+
+                <!-- Peta Google Maps (Embed Placeholder) -->
+                <div class="map-container animate-on-scroll">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.6789463817426!2d109.09237!3d-6.8936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6d8b8b8b8b8b8d%3A0x8b8b8b8b8b8b8b8b!2sJl.%20H.%20Ambary%2C%20Bumiayu%2C%20Brebes!5e0!3m2!1sen!2sid!4v1674000000000" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        SDIT AL AMBARY
+                    </a>
+                    <p>Mewujudkan pendidikan berkualitas untuk mencetak pemimpin masa depan yang berintegritas dan inovatif.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ambary/?locale=id_ID" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/6285135075272" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/sdit.alambary.bumiayu/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@SDITAl-AmbaryBumiayu" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Kepoin Kami</h4>
+                    <ul>
+                        <li><a href="#beranda">Beranda</a></li>
+                        <li><a href="#profil">Profil Sekolah</a></li>
+                        <li><a href="#berita">Aktivitas Siswa</a></li>
+                        <li><a href="#galeri">Galeri Foto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Hubungi Kami</h4>
+                    <ul>
+                        <li><a href="https://share.google/ZoUblwKtzrb36JBsd" target="_blank"><i class="fas fa-map-marker-alt"></i> Brebes, Jawa Tengah</a></li>
+                        <li><a href="https://wa.me/6285135075272" target="_blank"><i class="fas fa-phone"></i> +62 851 3507 5272</a></li>
+                        <li><a href="mailto:sdit.alambary@gmail.com"><i class="fas fa-envelope"></i> sdit.alambary@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 SDIT AL AMBARY. All Rights Reserved. Designed by Muhammad Nashiruddin Al Fauzan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 1. Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // 2. Sticky Header Effect (Ubah warna background saat scroll)
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // 3. Scroll Animation (Fade In/Slide Up) menggunakan Intersection Observer
+        const observerOptions = {
+            threshold: 0.1, // Memicu saat 10% elemen terlihat
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Hanya animasi sekali
+                }
+            });
+        }, observerOptions);
+
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        animateElements.forEach(el => observer.observe(el));
+
+        // 4. Smooth Scrolling untuk Anchor Links (Fallback untuk browser lama)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 70; // Sesuaikan dengan tinggi header fixed
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
+
+</body></html>
