@@ -251,7 +251,7 @@
         /* --- HERO SECTION --- */
         #beranda {
             height: 100vh;
-            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://picsum.photos/seed/schoolbuilding/1920/1080.jpg');
+            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTrJJWffmFcDpvA4hNz0qFCCaHZbMUE6HbtA&s');
             background-size: cover;
             background-position: center;
             background-attachment: fixed; /* Parallax effect */
@@ -478,8 +478,15 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .contact-info {
             background: var(--white);
-            padding: 40px;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: var(--shadow-md);
         }
@@ -526,6 +533,93 @@
         .contact-form textarea:focus {
             border-color: var(--primary-color);
             outline: none;
+        }
+
+        /* --- TESTIMONI ALUMNI --- */
+        .testimonial-section {
+            margin-top: 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 0;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .alumni-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .alumni-info h4 {
+            margin-bottom: 3px;
+            color: var(--primary-color);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .alumni-year {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .testimonial-content {
+            margin-bottom: 15px;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .testimonial-content p {
+            margin: 0;
+        }
+
+        .rating {
+            display: flex;
+            gap: 5px;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
+        .rating i {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .map-container {
@@ -695,7 +789,7 @@
                     <li><a href="#beranda" class="nav-link">Beranda</a></li>
                     <li><a href="#profil" class="nav-link">Profil</a></li>
                     <li><a href="#berita" class="nav-link">Berita</a></li>
-                    <li><a href="#galeri" class="nav-link">Galeri</a></li>
+                    <li><a href="https://drive.google.com/uc?export=download&id=1Jum9y33h97Hm-ckyFu9AMMT0w91i8d07" class="nav-link" target="_blank" rel="noopener noreferrer">Biaya SPP</a></li>
                     <li><a href="#kontak" class="nav-link">Kontak</a></li>
                 </ul>
             </nav>
@@ -715,7 +809,7 @@
                 <h1 class="hero-title">Selamat Datang di<div class="editable-hover">SDIT AL AMBARY</div></h1>
                 <p class="hero-subtitle">Membentuk Generasi Cerdas, Berkarakter, dan Berprestasi Menuju Masa Depan Gemilang.</p>
                 <div class="hero-buttons">
-                    <a href="#kontak" class="btn btn-primary">Daftar Sekarang</a>
+                    <a href="http://bit.ly/PPDBSDITALAMBARY" target="_blank" class="btn btn-primary">Daftar Sekarang</a>
                     <a href="#kontak" class="btn btn-outline">Hubungi Kami</a>
                 </div>
             </div>
@@ -885,14 +979,71 @@ al-Quran dan pembiasaan akhlakul karimah. </p>
                         </div>
                     </div>
 
-                    <!-- Form Kontak -->
-                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Pesan Anda telah terkirim! (Demo Only)');">
-                        <input type="text" placeholder="Nama Lengkap" required="">
-                        <input type="email" placeholder="Alamat Email" required="">
-                        <input type="text" placeholder="Subjek Pesan">
-                        <textarea rows="5" placeholder="Tulis pesan Anda di sini..." required=""></textarea>
-                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
-                    </form>
+                    <!-- Testimoni Alumni -->
+                    <div class="testimonial-section">
+                        <h3 style="margin-bottom: 30px;">Testimoni Alumni</h3>
+                        <div class="testimonial-grid">
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <img src="https://via.placeholder.com/60" alt="Alumni" class="alumni-photo">
+                                        <div class="alumni-info">
+                                            <h4>Muhammad Nashiruddin Al Fauzan</h4>
+                                            <p class="alumni-year">Angkatan 2020</p>
+                                        </div>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>"SDIT AL AMBARY telah memberikan saya fondasi pendidikan yang kuat dan nilai-nilai karakter yang luar biasa. Pengalaman belajar di sini sangat berkesan."</p>
+                                </div>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <img src="https://via.placeholder.com/60" alt="Alumni" class="alumni-photo">
+                                    <div class="alumni-info">
+                                        <h4>Azkiyah Imarotul ilmi</h4>
+                                        <p class="alumni-year">Angkatan 2019</p>
+                                    </div>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>"Guru-guru di SDIT AL AMBARY sangat berdedikasi dan peduli dengan perkembangan setiap siswa. Mereka membimbing kami untuk menjadi generasi penerus yang berkualitas."</p>
+                                </div>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <img src="https://via.placeholder.com/60" alt="Alumni" class="alumni-photo">
+                                    <div class="alumni-info">
+                                        <h4>Abdulloh sirojul ilmi</h4>
+                                        <p class="alumni-year">Angkatan 2018</p>
+                                    </div>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>"Fasilitas lengkap dan lingkungan belajar yang kondusif membuat saya betah setiap hari. Terima kasih SDIT AL AMBARY atas segala ilmu dan pengalaman."</p>
+                                </div>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Peta Google Maps (Embed Placeholder) -->
@@ -928,7 +1079,7 @@ al-Quran dan pembiasaan akhlakul karimah. </p>
                         <li><a href="#beranda">Beranda</a></li>
                         <li><a href="#profil">Profil Sekolah</a></li>
                         <li><a href="#berita">Aktivitas Siswa</a></li>
-                        <li><a href="#galeri">Galeri Foto</a></li>
+                        <li><a href="https://drive.google.com/uc?export=download&id=1Jum9y33h97Hm-ckyFu9AMMT0w91i8d07" target="_blank" rel="noopener noreferrer">Biaya SPP</a></li>
                     </ul>
                 </div>
 
@@ -1016,6 +1167,34 @@ al-Quran dan pembiasaan akhlakul karimah. </p>
                 }
             });
         });
+
+        // Contact form: open user's email client with prefilled message (mailto)
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const to = 'sdit.alambary@gmail.com';
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const subject = document.getElementById('subject').value.trim() || 'Pesan dari website SDIT AL AMBARY';
+                const message = document.getElementById('message').value.trim();
+
+                const bodyContent = `Nama: ${name}\nEmail: ${email}\n\n${message}`;
+                const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
+
+                // Try opening mailto in a new window/tab first (some browsers handle webmail),
+                // otherwise fallback to setting location.href.
+                try {
+                    const opened = window.open(mailtoLink, '_blank');
+                    if (!opened) {
+                        window.location.href = mailtoLink;
+                    }
+                } catch (err) {
+                    window.location.href = mailtoLink;
+                }
+            });
+        }
     </script>
 
 </body></html>
